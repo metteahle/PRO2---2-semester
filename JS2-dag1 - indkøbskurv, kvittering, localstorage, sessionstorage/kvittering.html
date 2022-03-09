@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kvittering</title>
+  <style>
+    .imagewidth{
+      width: 20%;
+    }
+
+    #basket{
+      width: 5%;
+    }
+
+    h2{
+      font-size: 14px;
+      font-family: helvetica;
+      font-weight: normal;
+    }
+
+    h1{
+      font-size: 20px;
+      font-family: helvetica;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="visListe"></div>
+
+
+<script>
+  visListe.innerHTML = localStorage.getItem("liste")
+
+
+</script>
+
+
+</body>
+</html>

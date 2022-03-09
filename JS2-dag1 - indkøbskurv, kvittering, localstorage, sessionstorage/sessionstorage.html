@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prøv session storage</title>
+  <style>
+    section{
+      display: flex;
+    }
+
+    #seHer{
+      background-color: lime;
+      min-width: 50%;
+      min-height: 10vh;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <button id="knap">Irish Stew</button>
+    <div id="seHer"></div>
+  </section>
+
+  <script>
+    const a = "Irish Stew"
+
+    // session: lever så længe browseren er åben - lever kun i det domæne man er i
+    // her gemmer vi
+    sessionStorage.setItem("test", a) /*setItem definerer*/
+
+    // her henter vi det gemte frem igen
+    //seHer.innerHTML = sessionStorage.getItem("test")
+
+
+    //eventListener --> når man klikker på knappen kommer "hej verden" frem
+    knap.addEventListener('click', function(){
+      //alert('Av!') brugt til at se om det virkerde
+      seHer.innerHTML += sessionStorage.getItem("test") + "<br>"
+    })
+
+  </script>
+
+</body>
+</html>

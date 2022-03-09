@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <title>Weather: Here and now</title>
+
+    <style>
+        /* google font: Berkshire */
+      @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;400;500;600;700&display=swap');
+
+        body {
+            text-align: center;
+            font-family: sans serif;
+            font-size: large;
+            background: lightblue;
+            color: black;
+            font-family: 'Saira Condensed', bold;
+        }
+
+        .weatherInfo {
+            border: 1px solid lawngreen;
+        }
+
+        .flexbox{
+          display: flex;
+          justify-content: space-around;
+        }
+
+        #whattime{
+          margin-left: -710px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Openweathermap Eksempel</h1>
+
+    <!-- herunder kan du se vejroplysningerne -->
+  <div id="whattime"></div>
+    <div class="flexbox">
+      <div id="result"></div>
+      <div id="Beijing"></div>
+    </div>
+
+<script>
+
+/*
+@datasæt hentes sådan:
+
+http://api.openweathermap.org/data/2.5/weather?
+q=Aarhus
+&lang=da
+&units=metric
+&appid=201d090c9cceacfc8931df89310ebfbb
+*/
+
+$(document).ready(function() {
+
+//Århus vejr
+    // get the weather data via query URI
+    fetch("http://api.openweathermap.org/data/2.5/weather?q=Aarhus&lang=da&units=metric&appid=3f02e6b21898bd47b4c139eeb6e600a6").then(response => {
+        return response.json();
+    }).then(data => {
+
+      //Tid
+      const now = new Date()
+      let hour = now.getHours()
+      let minute = now.getMinutes()
+      let second = now.getSeconds()
+
+      if(minute < 10) {minute = '0' + minute}
+      if(second < 10) {second = '0' + second}
+
+      let time = 'Klokken er nu:' + hour + ':' + minute + ':' + second
+
+        //Men hvordan får jeg tiden ind på siden så den vises?
+        document.getElementById("whattime").innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+
+
+        // Work with JSON data here
+        console.log(data); // show what's in the json
+        console.log(data.weather[0].description)
+
+        // solnedgang
+          var sunsetMs = data.sys.sunset * 1000; // dato-objektet har brug for millisek. Derfor * 1000
+          var sunset = new Date(sunsetMs);
+
+          // Minutter - tilføj 0 foran tal under 10
+          var sunsetMinutter = sunset.getMinutes()
+          var sunsetMinutterVis
+
+          if (sunsetMinutter<10){
+            sunsetMinutterVis = "0" + sunsetMinutter;
+          }
+          else {
+            sunsetMinutterVis = sunsetMinutter;
+          }
+
+          // Timer - tilføj 0 foran tal under 10
+          var sunsetTimer = sunset.getHours()
+          var sunsetTimerVis
+
+          if (sunsetTimer<10){
+            sunsetTimerVis = "0" + sunsetTimer;
+          }
+          else {
+            sunsetTimerVis = sunsetTimer;
+          }
+
+          // Datoformattering @URI < https://www.w3schools.com/js/js_date_methods.asp >
+          var sunsetTime = sunsetTimerVis + ":" + sunsetMinutterVis;
+
+
+        // solopgang
+          var sunriseMs = data.sys.sunrise * 1000; // dato-objektet har brug for millisek. Derfor * 1000
+          var sunrise = new Date(sunriseMs);
+
+          // Minutter - tilføj 0 foran tal under 10
+          var sunriseMinutter = sunrise.getMinutes()
+          var sunriseMinutterVis
+
+          if (sunriseMinutter<10){
+            sunriseMinutterVis = "0" + sunriseMinutter;
+          }
+          else {
+            sunriseMinutterVis = sunriseMinutter;
+          }
+
+          // Timer - tilføj 0 foran tal under 10
+          var sunriseTimer = sunrise.getHours()
+          var sunriseTimerVis
+
+          if (sunriseTimer<10){
+            sunriseTimerVis = "0" + sunriseTimer;
+          }
+          else {
+            sunriseTimerVis = sunriseTimer;
+          }
+
+          // Datoformattering @URI < https://www.w3schools.com/js/js_date_methods.asp >
+          var sunriseTime = sunriseTimerVis + ":" + sunriseMinutterVis;
+
+        /*
+        --> Prøv selv:
+        --> Tilføj oplysninger om solopgang.
+        */
+
+        //Vis på skærm
+        result.innerHTML = `
+        <h2>Vejret nu: ${data.name}</h2>
+        <h3>Temperatur ${data.main.temp}</h3>
+        <h3>Føles som ${data.main.feels_like}</h3>
+        <p> ${data.weather[0].description}</p>
+        <p> solnedgang: ${sunsetTime}</p>
+        <p> solopgang: ${sunriseTime}</p>
+        <p>
+          <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="icon" />
+        </p>
+        `
+
+    })
+
+//Beijing vejr
+    // get the weather data via query URI
+    fetch("http://api.openweathermap.org/data/2.5/weather?q=Beijing&lang=da&units=metric&appid=3f02e6b21898bd47b4c139eeb6e600a6").then(response => {
+        return response.json();
+    }).then(data => {
+
+        // Work with JSON data here
+        console.log(data); // show what's in the json
+        console.log(data.weather[0].description)
+
+        // solnedgang
+        var sunsetMs = data.sys.sunset * 1000; // dato-objektet har brug for millisek. Derfor * 1000
+        var sunset = new Date(sunsetMs);
+          // Datoformattering @URI < https://www.w3schools.com/js/js_date_methods.asp >
+        var sunsetTime = sunset.getHours() + ":" + sunset.getMinutes();
+
+        // solopgang
+        var sunriseMs = data.sys.sunrise * 1000; // dato-objektet har brug for millisek. Derfor * 1000
+        var sunrise = new Date(sunriseMs);
+        var sunriseTime = sunrise.getHours() + ":" + sunrise.getMinutes();
+
+        /*
+        --> Prøv selv:
+        --> Tilføj oplysninger om solopgang.
+        */
+
+        //Vis på skærm
+        Beijing.innerHTML = `
+        <h2>Vejret nu: ${data.name}</h2>
+        <h3>Temperatur ${data.main.temp}</h3>
+        <h3>Føles som ${data.main.feels_like}</h3>
+        <p> ${data.weather[0].description}</p>
+        <p> solnedgang: ${sunsetTime}</p>
+        <p> solopgang: ${sunriseTime}</p>
+        <p>
+          <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="icon" />
+        </p>
+        `
+
+    })
+
+      .catch(err => {
+        // Do something for an error here
+        console.log('There was an error ...');
+    });
+
+}); // document ready end
+</script>
+
+</body>
+</html>

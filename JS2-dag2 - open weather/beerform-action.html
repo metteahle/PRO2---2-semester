@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Beerform action</title>
+</head>
+<body>
+
+  <h1>Velbekomme</h1>
+    <div id="visDet"></div>
+
+
+<p>?bord=lone
+  &duff=Lille+Fad
+</p>
+
+<script>
+  // henter data fra queryStringen
+  const queryString = window.location.search;
+  console.log(queryString);
+
+  //parse parametre (parsers er når man laver noget om fra et format til et andet)
+  let urlParams = new URLSearchParams(queryString);
+  console.log(urlParams)
+
+  // vis det på siden
+  visDet.innerHTML = `
+    <p>En ${urlParams.get('duff')}
+      til ${urlParams.get('bord')}</p>
+      ` 
+</script>
+
+</body>
+</html>

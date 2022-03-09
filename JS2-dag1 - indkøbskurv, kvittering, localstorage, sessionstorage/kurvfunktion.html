@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Session storage ikoner</title>
+
+<style>
+  .imagewidth{
+    width: 20%;
+  }
+
+  #basket{
+    width: 5%;
+  }
+
+  #bestillinger{
+    background-color: lightgrey;
+    min-width: 50%;
+    min-height: 10vh;
+  }
+
+  .flexboks{
+    display: flex;
+  }
+
+  h2{
+    font-size: 14px;
+    font-family: helvetica;
+    font-weight: normal;
+  }
+
+  h1{
+    font-size: 20px;
+    font-family: helvetica;
+  }
+
+  .buttonpay{
+  background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+   padding: 15px 690px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 20px;
+  }
+</style>
+
+</head>
+<body>
+
+<main>
+
+<div class="flexboks">
+  <section>
+    <div id="soup">
+      <h1>Suppe</h1>
+      <img class="imagewidth" src="images/suppe.png" alt="suppe" id="soupdish">
+      <h2>Pris 60 kr</h2>
+    </div>
+
+    <div id="pizza">
+      <h1>Pizza</h1>
+      <img class="imagewidth" src="images/pizza.png" alt="pizza" id="pizzaslice">
+      <h2>Pris 80 kr</h2>
+    </div>
+
+    <div id="popcorn">
+      <h1>Popcorn</h1>
+        <img class="imagewidth" src="images/popcorn.png" alt="popcorn" id="smallpopcorn">
+      <h2>Pris 30 kr</h2>
+  </div>
+  </section>
+
+
+  <div id="bestillinger">
+    <img id="basket" src="images/kurv.png" alt="basket">
+    <h2>Her er dine bestillinger</h2>
+    <h2>Total:</h2>
+    <div id="ialt"></div>
+  </div>
+
+</div>
+
+
+  <button id="betal" class="buttonpay">Betal</button>
+
+</main>
+
+
+
+  <script>
+
+let sum = 0
+
+//let gem = sessionStorage.setItem("test",23)
+
+    soupdish.addEventListener('click',
+    function(){
+      //bestillinger.innerHTML += "<p>Suppe</p>" /*Denne får "bare" teksten suppe frem under bestillinger*/
+      bestillinger.innerHTML += soup.innerHTML /*Denne får hele div med id soup ind under bestillinger*/
+      sum = sum + 60
+      ialt.innerHTML = sum;
+      //bestillinger.innerHTML += parseInt( sessionStorage.getItem("test")) + parseInt( sessionStorage.getItem("test"))
+    })
+
+
+    pizzaslice.addEventListener('click',
+    function(){
+      bestillinger.innerHTML += pizza.innerHTML
+      sum = sum + 80
+      ialt.innerHTML = sum;
+    })
+
+    smallpopcorn.addEventListener('click',
+    function(){
+      bestillinger.innerHTML += popcorn.innerHTML
+      sum = sum + 30
+      ialt.innerHTML = sum;
+    })
+
+    //betal knap
+    betal.addEventListener('click', function(){
+      localStorage.setItem("liste", bestillinger.innerHTML)
+
+    })
+
+  </script>
+
+</body>
+</html>
