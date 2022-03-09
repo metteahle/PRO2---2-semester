@@ -12,7 +12,6 @@ let sum = 0
       //bestillinger.innerHTML += parseInt( sessionStorage.getItem("test")) + parseInt( sessionStorage.getItem("test"))
     })
 
-
     soupdish.addEventListener('click',
     function(){
       bestillinger.innerHTML += soup.innerHTML
