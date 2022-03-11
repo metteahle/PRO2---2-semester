@@ -38,10 +38,36 @@ h2{
   font-weight: bold;
 }
 
+.section {
+  text-align:center;
+  font-size: 3em;
+}
 
 /*Forside*/
 #veggies{
   width: 100%;
+  opacity: 65%;
+}
+
+#whattime{
+  position: absolute;
+  margin: 2%;
+  font-size: 100px;
+  color: var(--white);
+  width: 20%;
+  text-align: center;
+  z-index: 1;
+}
+
+#result{
+  position: absolute;
+  margin: 2%;
+  font-size: 20px;
+  color: var(--white);
+  margin-top: 12%;
+  width: 20%;
+  text-align: center;
+  z-index: 1;
 }
 
 body{
@@ -74,12 +100,30 @@ a:visited {
   margin-top: -10%;
   font-size: 50px;
   color: var(--white);
+  margin-left: -10%;
+  position: relative;
+  animation-name: example;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0%   {left:50px; top:0px;}
+  25%  {left:50px; top:50px;}
+  50%  {left:50px; top:0px;}
+  75%  {left:50px; top:50px;}
+  100% {left:50px; top:0px;}
 }
 
 .logo{
   width: 20%;
   margin-top: 5%;
   margin: 1%;
+}
+
+.trypuzzle{
+  width: 25%;
+  margin: 4%;
 }
 
 .paymethods{
@@ -99,5 +143,9 @@ a:visited {
 .presstoorder2{
   font-size: 60px;
   color: var(--white);
-  margin-left: 10%;
+  margin-left: 5%;
+  position: relative;
+  animation-name: example;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }

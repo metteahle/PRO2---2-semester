@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Puslespil!</title>
+  <link rel="stylesheet" href="css/puzzle.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png"/>
+
+  </head>
+  <body>
+
+  <!-- kilde: https://www.w3schools.com/html/html5_draganddrop.asp -->
+<div class="puzzletext">
+  <h2>Sammel pusslespillet</h2>
+  <p>Træk billederne frem og tilbage mellem boksene, til de danner billedet som ses til højre</p>
+</div>
+
+<div class="puzzleflex">  <!--Div flexbox start-->
+  <div class="section1">
+    <div id="div0" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img  class="puzzlepiece" src="images/puzzle1.png" draggable="true" ondragstart="drag(event)" id="drag0" width="88" height="31">
+    </div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle3.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle9.png" draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31">
+    </div>
+  </div>  <!--Div section1 slut-->
+
+  <div class="section2">
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle6.png" draggable="true" ondragstart="drag(event)" id="drag3" width="88" height="31">
+    </div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle2.png" draggable="true" ondragstart="drag(event)" id="drag4" width="88" height="31">
+    </div>
+
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle4.png" draggable="true" ondragstart="drag(event)" id="drag5" width="88" height="31">
+    </div>
+  </div> <!--Div section2 slut-->
+
+  <div class="section3">
+    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle8.png" draggable="true" ondragstart="drag(event)" id="drag6" width="88" height="31">
+    </div>
+
+    <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle5.png" draggable="true" ondragstart="drag(event)" id="drag7" width="88" height="31">
+    </div>
+
+    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div> <!--Div section3 slut-->
+
+    <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="puzzlepiece" src="images/puzzle7.png" draggable="true" ondragstart="drag(event)" id="drag8" width="88" height="31">
+    </div>
+
+    <div>
+      <img class="puzzleimage" src="images/puzzleimage.png" alt="veggies">
+    </div>
+</div> <!--Div flexbox slut-->
+
+
+
+<script src="js/puzzle.js"></script>
+
+</body>
+</html>

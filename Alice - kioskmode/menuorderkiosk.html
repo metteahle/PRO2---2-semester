@@ -6,68 +6,71 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Menu bestil</title>
   <link rel="stylesheet" href="css/menuorderkiosk.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/logo.png"/>
 </head>
 <body>
 
 <main>
 
+
 <div class="flexboks">
   <section class="menuorders">
-    <div id="onionrings">
+    <div id="onionrings" data-aos="flip-left">
       <div><!--Div til knap så den fjernes-->
         <h1>Onionrings</h1>
         <img class="imagewidth" src="images/onionrings.png" alt="onionrings" id="onionringsstarter">
         <h2>Pris 30 kr</h2>
-          <button onclick="this.parentElement.remove()">Fortryd</button>
+          <button onclick="cancel(30);this.parentElement.remove();">Fortryd</button>
       </div>
     </div>
 
-    <div id="soup">
+    <div id="soup" data-aos="flip-left">
       <div><!--Div til knap så den fjernes-->
         <h1>Græskarsupe</h1>
         <img class="imagewidth" src="images/soup.png" alt="soup" id="soupdish">
         <h2>Pris 45 kr</h2>
-          <button onclick="this.parentElement.remove()">Fortryd</button>
+          <button onclick="cancel(45);this.parentElement.remove();">Fortryd</button>
       </div>
     </div>
 
-    <div id="lasagne">
+    <div id="lasagne" data-aos="flip-left">
       <div><!--Div til knap så den fjernes-->
         <h1>Lasagne</h1>
           <img class="imagewidth" src="images/lasagne.png" alt="lasagne" id="lasagnemeal">
         <h2>Pris 70 kr</h2>
-        <button onclick="this.parentElement.remove()">Fortryd</button>
+        <button onclick="cancel(70);this.parentElement.remove();">Fortryd</button>
       </div>
     </div>
 
-    <div id="roastpork">
+    <div id="roastpork" data-aos="flip-left">
       <div><!--Div til knap så den fjernes-->
         <h1>Stegt flæsk</h1>
           <img class="imagewidth" src="images/meat.png" alt="pork" id="roastporkmeal">
         <h2>Pris 119 kr</h2>
-          <button onclick="this.parentElement.remove()">Fortryd</button>
+          <button onclick="cancel(119);this.parentElement.remove();">Fortryd</button>
       </div>
     </div>
 
-  <div id="lemonpie">
+  <div id="lemonpie" data-aos="flip-left">
       <div><!--Div til knap så den fjernes-->
         <h1>Citrontærte</h1>
           <img class="imagewidth" src="images/lemontart.png" alt="lemontart" id="lemonpiedessert">
         <h2>Pris 40 kr</h2>
-        <button onclick="this.parentElement.remove()">Fortryd</button>
+        <button onclick="cancel(40);this.parentElement.remove();">Fortryd</button>
       </div>
   </div>
 
-  <div id="sorbet">
+  <div id="sorbet" data-aos="flip-left">
     <div><!--Div til knap så den fjernes-->
       <h1>Sorbet is</h1>
         <img class="imagewidth" src="images/strawberrysorbet.png" alt="icecream" id="sorbetdessert">
       <h2>Pris 35 kr</h2>
-      <button onclick="this.parentElement.remove()">Fortryd</button>
+      <button onclick="cancel(35);this.parentElement.remove();">Fortryd</button>
     </div>
   </div>
   </section>
+
 
 
   <div id="bestillinger">
@@ -87,8 +90,11 @@
 
 </main>
 
-
-
+<!--AOS kilde: https://michalsnik.github.io/aos/-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="js/menuorderkiosk.js"></script>
 
 </body>

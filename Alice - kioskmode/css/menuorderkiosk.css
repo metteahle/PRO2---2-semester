@@ -32,6 +32,7 @@
     font-weight: 200;
   }
 
+
 .imagewidth{
   width: 40%;
 }
@@ -90,4 +91,31 @@ h1{
   font-size: 20px;
   margin-left: 2%;
   margin-top: 2%;
+}
+
+.kvitteringflex{
+  display: flex;
+}
+
+/*Puslespil*/
+.trypuzzle{
+  width: 40%;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.puzzlebackground{
+  background-color: var(--green);
+}
+
+.contentpuzzle{
+  margin: 4%;
 }

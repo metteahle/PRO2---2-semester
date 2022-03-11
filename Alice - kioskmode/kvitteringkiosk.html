@@ -7,12 +7,22 @@
   <title>Kvittering</title>
   <link rel="stylesheet" href="css/menuorderkiosk.css">
     <link rel="icon" type="image/x-icon" href="images/logo.png"/>
+
   </head>
 
 <body>
 
+<div class="kvitteringflex">
   <div id="visListe"></div>
-
+    <div class="puzzlebackground">
+      <div class="contentpuzzle">
+        <a href="puzzle.html">
+        <h1>Sammel puslespillet mens du venter på din mad</h1>
+        <img class="trypuzzle" src="images/trypuzzle.png" alt="puzzle">
+        </a>
+      </div>
+    </div>
+</div>
 
 <script>
   visListe.innerHTML = localStorage.getItem("liste")

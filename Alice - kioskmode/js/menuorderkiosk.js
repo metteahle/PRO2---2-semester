@@ -1,51 +1,67 @@
 
-let sum = 0
+// Kilde: https://michalsnik.github.io/aos/
+AOS.init({
+	duration: 850,
+})
+
+
+//let sum = 0
 
 //let gem = sessionStorage.setItem("test",23)
+let orders = 0
+ialt.innerHTML = orders
 
-    onionringsstarter.addEventListener('click',
-    function(){
-      //bestillinger.innerHTML += "<p>Suppe</p>" /*Denne får "bare" teksten suppe frem under bestillinger*/
-      bestillinger.innerHTML += onionrings.innerHTML /*Denne får hele div med id soup ind under bestillinger*/
-      sum = sum + 30
-      ialt.innerHTML = sum;
-      //bestillinger.innerHTML += parseInt( sessionStorage.getItem("test")) + parseInt( sessionStorage.getItem("test"))
-    })
 
-    soupdish.addEventListener('click',
-    function(){
-      bestillinger.innerHTML += soup.innerHTML
-      sum = sum + 45
-      ialt.innerHTML = sum;
-    })
+function cancel(amount){
+	orders -= amount
+  ialt.innerHTML = orders
+}
 
-    lasagnemeal.addEventListener('click',
-    function(){
-      bestillinger.innerHTML += lasagne.innerHTML
-      sum = sum + 70
-      ialt.innerHTML = sum;
-    })
 
-    roastporkmeal.addEventListener('click',
-    function(){
-      bestillinger.innerHTML += roastpork.innerHTML
-      sum = sum + 119
-      ialt.innerHTML = sum;
-    })
+onionringsstarter.addEventListener('click',
+function(){
+  //bestillinger.innerHTML += "<p>Suppe</p>" /*Denne får "bare" teksten suppe frem under bestillinger*/
+  bestillinger.innerHTML += onionrings.innerHTML /*Denne får hele div med id soup ind under bestillinger*/
+  orders = orders + 30
+  ialt.innerHTML = orders;
+  //bestillinger.innerHTML += parseInt( sessionStorage.getItem("test")) + parseInt( sessionStorage.getItem("test"))
+})
 
-    lemonpiedessert.addEventListener('click',
-    function(){
-      bestillinger.innerHTML += lemonpie.innerHTML
-      sum = sum + 40
-      ialt.innerHTML = sum;
-    })
+soupdish.addEventListener('click',
+function(){
+  bestillinger.innerHTML += soup.innerHTML
+  orders = orders + 45
+  ialt.innerHTML = orders;
+})
 
-    sorbetdessert.addEventListener('click',
-    function(){
-      bestillinger.innerHTML += sorbet.innerHTML
-      sum = sum + 35
-      ialt.innerHTML = sum;
-    })
+lasagnemeal.addEventListener('click',
+function(){
+  bestillinger.innerHTML += lasagne.innerHTML
+  orders = orders + 70
+  ialt.innerHTML = orders;
+})
+
+roastporkmeal.addEventListener('click',
+function(){
+  bestillinger.innerHTML += roastpork.innerHTML
+  orders = orders + 119
+  ialt.innerHTML = orders;
+})
+
+lemonpiedessert.addEventListener('click',
+function(){
+  bestillinger.innerHTML += lemonpie.innerHTML
+  orders = orders + 40
+  ialt.innerHTML = orders;
+})
+
+sorbetdessert.addEventListener('click',
+function(){
+  bestillinger.innerHTML += sorbet.innerHTML
+  orders = orders + 35
+  ialt.innerHTML = orders;
+})
+
 
     //betal knap
     betal.addEventListener('click', function(){
