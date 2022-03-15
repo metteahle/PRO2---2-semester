@@ -1,5 +1,6 @@
 
 // Kilde: https://michalsnik.github.io/aos/
+//billeder der flipper rundt
 AOS.init({
 	duration: 850,
 })
@@ -8,6 +9,7 @@ AOS.init({
 //let sum = 0
 
 //let gem = sessionStorage.setItem("test",23)
+
 let orders = 0
 ialt.innerHTML = orders
 
@@ -17,7 +19,7 @@ function cancel(amount){
   ialt.innerHTML = orders
 }
 
-
+//Indkøbskurv
 onionringsstarter.addEventListener('click',
 function(){
   //bestillinger.innerHTML += "<p>Suppe</p>" /*Denne får "bare" teksten suppe frem under bestillinger*/

@@ -1,3 +1,5 @@
+// kilde: https://www.w3schools.com/html/html5_draganddrop.asp
+//drag and drop puslespil
 function allowDrop(ev) {
   ev.preventDefault();
 }

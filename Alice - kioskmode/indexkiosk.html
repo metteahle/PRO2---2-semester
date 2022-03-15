@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +14,32 @@
 </head>
 <body>
 
-<div class="timeandweather">
-  <div id="whattime"></div>
-  <div id="result"></div>
-</div>
-  <img id="veggies" src="images/veggies.png" alt="veggies">
+  <div class="translationButtons">
+    <button type="button" name="button" onclick="translation()" class="translateButtonStyle">English</button>
+    <button type="button" name="button" onclick="getDanishTranslation()" class="translateButtonStyle">Dansk</button>
+  </div>
 
-  <a href="menuorderkiosk.html">
+    <div class="timeandweather">
+      <div id="whattime"></div>
+      <div id="result"></div>
+    </div>
+      <img id="veggies" src="images/veggies.png" alt="veggies">
 
-<div class="textindex">
-  <h1 class="orderandpayhere">Bestil og betal her</h1>
-  <h2 class="presstoorder">Tryk for at bestille</h2>
-  <img class="logo" src="images/logo.png" alt="logo">
-</div>
+      <a href="menuorderkiosk.html">
 
-<img class="paymethods" src="images/paymethods.png" alt="paymethods">
+    <div class="textindex">
+      <h1 class="orderandpayhere" id="translate1">Bestil og betal her</h1>
+      <h2 class="presstoorder" id="translate2">Tryk for at bestille</h2>
+      <img class="logo" src="images/logo.png" alt="logo">
+    </div>
 
-<div class="bottomindexflex">
-  <img class="logo" src="images/logo.png" alt="logo">
-  <h2 class="presstoorder2">TRYK FOR AT BESTILLE</h2>
-</div>
+    <img class="paymethods" src="images/paymethods.png" alt="paymethods">
+
+    <div class="bottomindexflex">
+      <img class="logo" src="images/logo.png" alt="logo">
+      <h2 class="presstoorder2" id="translate3">TRYK FOR AT BESTILLE</h2>
+    </div>
+
 
 <script src="js/index.js"></script>
 

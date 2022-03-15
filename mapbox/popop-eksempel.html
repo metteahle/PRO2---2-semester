@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Attach a popup to a marker instance</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    #marker {
+        background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v810-noon-05.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=c64e5f4b8c3174f494eef2cb36e57bdd');
+        background-color: lime;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+        max-width: 200px;
+    }
+</style>
+
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoibWV0dGVhaGxlIiwiYSI6ImNsMHFlYmc1eDI5ZWczY3A3b2VtMjRrZnoifQ.G1n5E_md8zkWVhFAnXqLfA';
+    const monument = [-77.0353, 38.8895];
+    const aarhus = [10.209403, 56.158539];
+
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/metteahle/cl0qeqe6z008v14n27ohblebn', //indsæt style URL fra Mapbox, så overføres designet
+        center: aarhus,
+        zoom: 15,
+        pitch: 42, //tilter kortet i grader
+        bearing: 35 //hvilken retning kommer vi fra - kompasretninger i grader
+    })
+
+    // create the popup
+    const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'Restaurant Alice.'
+    );
+
+    // create DOM element for the marker
+    const el = document.createElement('div');
+    el.id = 'marker';
+
+    // create the marker
+    new mapboxgl.Marker(el)
+        .setLngLat(aarhus)
+        .setPopup(popup) // sets a popup on this marker
+        .addTo(map);
+
+</script>
+
+</body>
+</html>

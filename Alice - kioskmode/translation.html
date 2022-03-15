@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<a href="#da" data-reload>Dansk</a>
+<a href="#eng" data-reload>English</a>
+
+<p id="hi">Velkommen allesammen</p>
+
+  <script>
+    //define language reload anchors
+    var dataReload = document.querySelectorAll("[data-reload]");
+
+    // language translations
+    var language = {
+      da: {
+        welcome = "Velkommen allesammen"
+      },
+      eng: {
+        welcome = "Welcome everyone"
+      }
+    };
+
+    // define language via window hash
+    if (window.location.hash) {
+      if (window.location.hash === "#eng") {
+        hi.textContent = language.eng.welcome;
+      }
+    }
+
+    // define language reload onclick illiteration
+    for (i = 0; i <= dataReload.length; i++) {
+      dataReload[i].onclick = function(){
+        location.reload(true);
+      };
+    }
+  </script>
+
+</body>
+</html>

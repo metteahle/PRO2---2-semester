@@ -52,7 +52,7 @@ h2{
 #whattime{
   position: absolute;
   margin: 2%;
-  font-size: 100px;
+  font-size: 80px;
   color: var(--white);
   width: 20%;
   text-align: center;
@@ -61,10 +61,9 @@ h2{
 
 #result{
   position: absolute;
-  margin: 2%;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--white);
-  margin-top: 12%;
+  margin-top: 8%;
   width: 20%;
   text-align: center;
   z-index: 1;
@@ -148,4 +147,22 @@ a:visited {
   animation-name: example;
   animation-duration: 6s;
   animation-iteration-count: infinite;
+}
+
+.timeandweather{
+  margin-top: -2%;
+}
+
+.translationButtons{
+  position: absolute;
+  z-index: 1;
+  margin-left: 85%;
+  margin-top: 5%;
+}
+
+.translateButtonStyle{
+  background-color: var(--green);
+  color: var(--white);
+  font-family: Oswald;
+  font-size: 30px;
 }

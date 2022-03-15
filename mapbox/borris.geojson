@@ -1,0 +1,135 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Hjem": "Lone",
+        "storegade": 10
+      },
+      "geometry": {
+        "coordinates": [
+          8.64413,
+          55.959877
+        ],
+        "type": "Point"
+      },
+      "id": "009fb88cba41428f1335ace4c1b415d3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Sted": "Station",
+        "fiskefilet": 89,
+        "pommes": 34
+      },
+      "geometry": {
+        "coordinates": [
+          8.644411,
+          55.958527
+        ],
+        "type": "Point"
+      },
+      "id": "0237d4c374174fca4e720e5d3bc7fa1a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Restaurant": "Kineseren",
+        "buffet": 229
+      },
+      "geometry": {
+        "coordinates": [
+          8.643771,
+          55.958755
+        ],
+        "type": "Point"
+      },
+      "id": "41f90f9cac67f881f93afef11c078b90"
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              8.6433,
+              55.958805
+            ],
+            [
+              8.643331,
+              55.958714
+            ],
+            [
+              8.643404,
+              55.958588
+            ],
+            [
+              8.643724,
+              55.958613
+            ],
+            [
+              8.644247,
+              55.958727
+            ],
+            [
+              8.644081,
+              55.958984
+            ],
+            [
+              8.6433,
+              55.958805
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "7effdf4653a83e232915ffabf6f1b246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sti": "fra x til station"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            8.64409,
+            55.959866
+          ],
+          [
+            8.643909,
+            55.959699
+          ],
+          [
+            8.644658,
+            55.959376
+          ],
+          [
+            8.645701,
+            55.958919
+          ],
+          [
+            8.645606,
+            55.958863
+          ],
+          [
+            8.645385,
+            55.958813
+          ],
+          [
+            8.64441,
+            55.958621
+          ],
+          [
+            8.64441,
+            55.958552
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "8026a98a1b1942bafcd9ccf7eb13f50b"
+    }
+  ],
+  "type": "FeatureCollection"
+}
