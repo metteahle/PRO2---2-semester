@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+
+/*font-family: 'News Cycle'
+  font-family: 'AW Conqueror Inline'
+*/
+/* font-family: aw-conqueror-inline, sans-serif;
+    font-style: normal;
+    font-weight: 400; */
+
+:root {
+  /* farver */
+  --orange: #FF521D;
+  --beige: #FEBA99;
+  --greywhite: #EDEDED; /*Bruges som baggrundsfarve til links/knapper*/
+  --black: #000000;
+  --white: #ffffff;
+}
+
+  /* For at lave en farve som gradient */
+  /* background: rgb(255,82,29); */
+  /* background: linear-gradient(73deg, rgba(255,82,29,1) 5%, rgba(254,186,153,1) 49%); */
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/* husk at slette denne - ikke kopirer med */
+body{
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Tal der tæller op */
+.Mwrapper{
+  padding: 20px 50px;
+}
+
+.Mcounter-up{
+  min-height: 30vh;
+}
+
+.Mcounter-up .Mcontent{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Mbox{
+  width: 20%;
+  text-align: center;
+}
+
+.Micon{
+  width: 20%;
+}
+
+.Mgender{
+  width: 12%;
+}
+
+.Mnumbers{
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'News Cycle';
+  background: -webkit-linear-gradient(var(--orange), var(--beige));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 5%;
+    border-radius: 40px;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px var(--beige);
+}
+
+
+.button1:hover {
+    background-color: var(--beige);
+    color: white;
+}

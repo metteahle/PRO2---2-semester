@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+
+/*font-family: 'News Cycle'
+  font-family: 'AW Conqueror Inline'
+*/
+ font-family: aw-conqueror-inline, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+
+:root {
+  /* farver */
+  --orange: #FF521D;
+  --beige: #FEBA99;
+  --greywhite: #EDEDED; /*Bruges som baggrundsfarve til links/knapper*/
+  --black: #000000;
+  --white: #ffffff;
+  --headline: 'AW Conqueror Inline';
+  --text: 'News Cycle';
+}
+
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+
+#Mwrap{
+  margin: 2%;
+  font-family: 'News Cycle';
+}
+
+
+.Mtextpiano {
+color: #fff;
+font-size: 50px;
+font-family: aw-conqueror-inline, sans-serif;
+
+}
+
+.Mtextpiano2 {
+color: #fff;
+font-size: 20px;
+}
+
+.nowplaying {
+font-size: 50px;
+line-height: 1;
+color: #eee;
+text-shadow: 0 0 5rem #FEBA99;
+transition: all .07s ease;
+min-height: 120px;
+}
+
+.keys {
+display: block;
+width: 100%;
+height: 350px;
+max-width: 880px;
+position: relative;
+margin: 40px auto 0;
+cursor: none;
+}
+
+.key {
+position: relative;
+border: 4px solid black;
+border-radius: .5rem;
+transition: all .07s ease;
+display: block;
+box-sizing: border-box;
+z-index: 2;
+}
+
+.key:not(.sharp) {
+float: left;
+width: 10%;
+height: 100%;
+background: rgba(255, 255, 255, .8);
+}
+
+.key.sharp {
+position: absolute;
+width: 6%;
+height: 60%;
+background: #000;
+color: #eee;
+top: 0;
+z-index: 3;
+}
+
+.key[data-key="87"] {
+left: 7%;
+}
+
+.key[data-key="69"] {
+left: 17%;
+}
+
+.key[data-key="84"]  {
+left: 37%;
+}
+
+.key[data-key="89"] {
+left: 47%;
+}
+
+.key[data-key="85"] {
+left: 57%;
+}
+
+.key[data-key="79"] {
+left: 77%;
+}
+
+.key[data-key="80"] {
+left: 87%;
+}
+
+.playing {
+transform: scale(.95);
+border-color: #FF521D;
+box-shadow: 0 0 1rem #FF521D;
+}
+
+.hints {
+display: block;
+width: 100%;
+opacity: 0;
+position: absolute;
+bottom: 7px;
+transition: opacity .3s ease-out;
+font-size: 20px;
+}
+
+.keys:hover .hints {
+opacity: 1;
+}
